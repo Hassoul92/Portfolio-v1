@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yassine Belakoul - Portfolio</title>
+    <style>
+        /* ===== BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            margin: 0.25rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #667eea;
+        }
+
+        h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== ACCUEIL ===== */
+        #accueil {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #accueil h1 {
+            color: white;
+            font-size: 3rem;
+        }
+
+        #accueil p {
+            font-size: 1.3rem;
+            margin: 1rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 0.8rem 2rem;
+            margin-top: 1rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* ===== À PROPOS ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .skill-box {
+            background: #f4f4f4;
+            padding: 1.2rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        /* ===== PARCOURS ===== */
+        .timeline-item {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .date {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== E5 ET VEILLE ===== */
+        .info-box {
+            background: #f4f4f4;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .info-box h3 {
+            margin-bottom: 1rem;
+        }
+
+        .info-box ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .info-box li {
+            margin: 0.5rem 0;
+        }
+
+        /* ===== PROJETS ===== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f4f4f4;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .contact-item {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-item strong {
+            color: #667eea;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #accueil h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#parcours">Parcours</a></li>
+            <li><a href="#e5">Épreuve E5</a></li>
+            <li><a href="#veille">Veille Technologique</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===== ACCUEIL ===== -->
+    <section id="accueil">
+        <h1>Yassine Belakoul</h1>
+        <p>Étudiant en BTS SIO première année</p>
+        <p>Passionné par la programmation et les systèmes numériques</p>
+        <a href="#contact" class="btn">Me contacter</a>
+    </section>
+
+    <!-- ===== À PROPOS ===== -->
+    <section id="apropos">
+        <h2>À propos de moi</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>Depuis mes premières lignes de code, j'ai trouvé dans la programmation un moyen d'exprimer à la fois ma logique et ma créativité. Ce qui me motive, c'est de comprendre comment les choses fonctionnent en profondeur et de transformer une idée en projet concret.</p>
+                <br>
+                <p>Curieux, autonome et exigeant, je cherche avant tout à progresser dans un environnement stimulant où je peux apprendre, partager et apporter une vraie valeur.</p>
+            </div>
+            
+            <div class="skills">
+                <div class="skill-box">
+                    <strong>💻 Programmation</strong>
+                    <p>Python, JavaScript, HTML/CSS</p>
+                </div>
+                <div class="skill-box">
+                    <strong>🔐 Réseau & Sécurité</strong>
+                    <p>Réseau informatique, Cybersécurité</p>
+                </div>
+                <div class="skill-box">
+                    <strong>🗣️ Soft Skills</strong>
+                    <p>Communication, Gestion du stress, Esprit d'analyse</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PARCOURS ===== -->
+    <section id="parcours">
+        <h2>Mon parcours</h2>
+        
+        <div class="timeline-item">
+            <h3>🎓 BTS Services Informatiques aux Organisations</h3>
+            <p class="date">2024 - 2025 | Lycée Charles de Foucauld, Paris</p>
+            <p>Formation en cours dans les services informatiques, développement et gestion de projets.</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>🎓 Baccalauréat Professionnel Systèmes Numériques</h3>
+            <p class="date">2021 - 2024 | Lycée Isaac Newton</p>
+            <p>Option ARED (Audiovisuels, Réseau et Équipement Domestiques) - Mention Très Bien</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>💼 Employé polyvalent - Grand Rex</h3>
+            <p class="date">2024 - 2025</p>
+            <p>Accueil des spectateurs, gestion de caisse, gestion des stocks et confiserie.</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>💼 Caissier - Fnac</h3>
+            <p class="date">2023 - 2024</p>
+            <p>Conseil client en électroménager et électronique, gestion des transactions.</p>
+        </div>
+    </section>
+
+    <!-- ===== ÉPREUVE E5 ===== -->
+    <section id="e5">
+        <h2>Épreuve E5</h2>
+        
+        <div class="info-box">
+            <h3>📋 Qu'est-ce que l'Épreuve E5 ?</h3>
+            <p>L'épreuve E5 du BTS SIO, appelée <strong>"Évaluation des compétences informatiques"</strong>, permet d'évaluer les compétences acquises lors des expériences professionnelles (stages, emplois, projets).</p>
+        </div>
+
+        <div class="info-box">
+            <h3>🎯 Deux options possibles :</h3>
+            <ul>
+                <li><strong>SLAM</strong> - Conception et développement d'applications</li>
+                <li><strong>SISR</strong> - Administration des systèmes et des réseaux</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>⏱️ Déroulement de l'épreuve :</h3>
+            <p><strong>Préparation :</strong> environ 1h30 avant l'épreuve</p>
+            <p><strong>Présentation orale :</strong> ~10 minutes pour présenter son parcours et ses compétences techniques</p>
+            <p><strong>Entretien avec le jury :</strong> ~30 minutes de questions sur les choix techniques, l'organisation et les projets présentés</p>
+        </div>
+    </section>
+
+    <!-- ===== VEILLE TECHNOLOGIQUE ===== -->
+    <section id="veille">
+        <h2>Veille Technologique</h2>
+        
+        <div class="info-box">
+            <h3>🔍 C'est quoi une veille technologique ?</h3>
+            <p>La veille technologique consiste à se tenir informé des dernières évolutions, innovations et tendances dans le domaine de l'informatique. C'est une activité essentielle pour rester à jour et anticiper les changements du secteur.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>💡 Pourquoi c'est important ?</h3>
+            <ul>
+                <li>Rester compétitif et à jour sur les nouvelles technologies</li>
+                <li>Anticiper les évolutions du métier et les besoins du marché</li>
+                <li>Découvrir de nouvelles solutions et méthodes de travail</li>
+                <li>Améliorer ses compétences et son expertise technique</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>🎯 Mon sujet de veille :</h3>
+            <p><strong>Les menaces liées à l'IA et à l'automatisation des cyberattaques</strong></p>
+            <p>Ce sujet m'intéresse particulièrement car il touche directement à mon futur métier en réseaux et cybersécurité. Comprendre les menaces liées à l'IA permet d'anticiper les risques et de renforcer la sécurité des systèmes.</p>
+        </div>
+    </section>
+
+    <!-- ===== PROJETS ===== -->
+    <section id="projets">
+        <h2>Mes projets</h2>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-img">🌐</div>
+                <div class="project-info">
+                    <h3>Portfolio Personnel</h3>
+                    <p>Site web développé en HTML/CSS pour présenter mon parcours et mes compétences.</p>
+                    <p><strong>Technologies :</strong> HTML, CSS</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img">🐍</div>
+                <div class="project-info">
+                    <h3>Application Python</h3>
+                    <p>Projet de développement d'une application en Python dans le cadre de ma formation BTS SIO.</p>
+                    <p><strong>Technologies :</strong> Python</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img">🔐</div>
+                <div class="project-info">
+                    <h3>Projet Sécurité</h3>
+                    <p>Étude et mise en place de solutions de sécurité informatique et réseau.</p>
+                    <p><strong>Technologies :</strong> Sécurité réseau</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact">
+        <h2>Me contacter</h2>
+        <div class="contact-box">
+            <div class="contact-item">
+                <strong>📧 Email :</strong> yassine.belakoul.pro@gmail.com
+            </div>
+            <div class="contact-item">
+                <strong>📱 Téléphone :</strong> 07.69.49.70.69
+            </div>
+            <div class="contact-item">
+                <strong>🌍 Langues :</strong> Français (natif), Anglais (B1)
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>&copy; 2025 Yassine Belakoul - Tous droits réservés</p>
+    </footer>
+
+    <!-- ===== SCRIPT SIMPLE ===== -->
+    <script>
+        // Navigation fluide quand on clique sur les liens
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.onclick = function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            };
+        });
+    </script>
+
+</body>
+</html>
